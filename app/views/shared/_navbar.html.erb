@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+  <h1>Dotters</h1>
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,9 +10,10 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Live", live_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Teams", teams_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Rank", rank_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -39,6 +40,14 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+    <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Live", live_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Teams", teams_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Rank", rank_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+
+
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
