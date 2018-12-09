@@ -7,9 +7,6 @@ class PagesController < ApplicationController
   def live
   end
 
-  def teams
-  end
-
   def rank
   end
 
