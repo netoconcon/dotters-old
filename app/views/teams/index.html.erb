@@ -1,2 +1,104 @@
-<h1>Teams#index</h1>
-<p>Find me in app/views/teams/index.html.erb</p>
+<h1>Teams</h1>
+<p>Confira todos os times de Corrida de Aventura do Brasil</p>
+
+<%= link_to "Add a team", new_team_path, class: "btn btn-primary" %>
+
+
+
+
+<div class="container">
+  <% @teams.each do |team| %>
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="card-team">
+          <h2>  <%= team.name %> </h2>
+          <%= link_to team_path(team), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+        </div>
+      </div>
+
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="card-team">
+          <h2>Atletas</h2>
+        </div>
+      </div>
+
+      <div class="col-xs-4 col-sm-4 col-md43 col-lg-4">
+        <div class="card-team">
+          <h2>Team Skills</h2>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="badge badge-primary badge-pill">
+            Trekking:
+            <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= team.trekking > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
+                <% end %>
+              </span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="badge badge-primary badge-pill">
+            MTB:
+            <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= team.mtb > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
+                <% end %>
+              </span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="badge badge-primary badge-pill">
+            Canoagem:
+            <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= team.kayaking > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
+                <% end %>
+              </span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="badge badge-primary badge-pill">
+            Orientação:
+            <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= team.orienteering > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
+                <% end %>
+              </span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="badge badge-primary badge-pill">
+            Vertical:
+            <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= team.vertical > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
+                <% end %>
+              </span>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+          </ul>
+
+
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+</div>
