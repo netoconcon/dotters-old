@@ -6,12 +6,14 @@
 
 
 
+
 <div class="container">
   <% @teams.each do |team| %>
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <div class="card-team">
           <h2> <%= link_to team.name, team_path(team)%></h2>
+          <%= link_to 'Edit Team', edit_team_path(team), class: "btn btn-success btn-xs" %>
           <%= link_to team_path(team), method: :delete, data: { confirm: "Are you sure?" } do %>
                   <i class="fa fa-trash destroy_dose"></i>
                 <% end %>
