@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <div class="card-team">
-          <h2>  <%= team.name %> </h2>
+          <h2> <%= link_to team.name, team_path(team)%></h2>
           <%= link_to team_path(team), method: :delete, data: { confirm: "Are you sure?" } do %>
                   <i class="fa fa-trash destroy_dose"></i>
                 <% end %>
@@ -28,60 +28,55 @@
         <div class="card-team">
           <h2>Team Skills</h2>
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span class="badge badge-primary badge-pill">
+            <li class="list-group-item">
             Trekking:
             <% counter = 0 %>
                 <% 5.times do %>
                   <i class="fa <%= team.trekking > counter ? 'fa-star' : 'fa-star-o' %>"></i>
                   <% counter += 1 %>
                 <% end %>
-              </span>
             </li>
-
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span class="badge badge-primary badge-pill">
+            <li class="list-group-item">
             MTB:
             <% counter = 0 %>
                 <% 5.times do %>
                   <i class="fa <%= team.mtb > counter ? 'fa-star' : 'fa-star-o' %>"></i>
                   <% counter += 1 %>
                 <% end %>
-              </span>
             </li>
-
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span class="badge badge-primary badge-pill">
+            <li class="list-group-item">
             Canoagem:
             <% counter = 0 %>
                 <% 5.times do %>
                   <i class="fa <%= team.kayaking > counter ? 'fa-star' : 'fa-star-o' %>"></i>
                   <% counter += 1 %>
                 <% end %>
-              </span>
             </li>
-
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span class="badge badge-primary badge-pill">
+            <li class="list-group-item">
             Orientação:
             <% counter = 0 %>
                 <% 5.times do %>
                   <i class="fa <%= team.orienteering > counter ? 'fa-star' : 'fa-star-o' %>"></i>
                   <% counter += 1 %>
                 <% end %>
-              </span>
             </li>
-
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span class="badge badge-primary badge-pill">
+            <li class="list-group-item">
             Vertical:
             <% counter = 0 %>
                 <% 5.times do %>
                   <i class="fa <%= team.vertical > counter ? 'fa-star' : 'fa-star-o' %>"></i>
                   <% counter += 1 %>
                 <% end %>
-              </span>
             </li>
+
+
+
+
+
+
+
+
+
 
 
 
